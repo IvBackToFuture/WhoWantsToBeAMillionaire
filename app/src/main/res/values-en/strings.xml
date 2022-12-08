@@ -1,7 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Who wants to be a millionaire</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello_blank_fragment">Hello blank gragment</string>
     <string name="you_answer_string">You answer on</string>
     <string name="all_string">all</string>
     <string name="questions">questions</string>
@@ -19,8 +19,8 @@
     <string name="classic">Classic</string>
     <string name="home">Home</string>
     <string name="your_winnings">Your winnings</string>
-    <string name="internet_error_message">Error. Please check your Internet connection.</string>
-    <string name="wait_game_str">waiting…\ngame is loading…</string>
+    <string name="internet_error_message">Error. Please check your internet connection.</string>
+    <string name="wait_game_str">waiting... game is loading</string>
     <string name="back">Back</string>
     <string name="split">Split</string>
     <string name="people">people</string>

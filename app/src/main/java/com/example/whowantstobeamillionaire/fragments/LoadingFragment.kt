@@ -1,7 +1,6 @@
 package com.example.whowantstobeamillionaire.fragments
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -32,7 +31,6 @@ class LoadingFragment : Fragment() {
 
         job = lifecycleScope.launch {
             viewModel.gameStatusFlow.collect {
-                Log.d("BEDA", it.name)
                 if (it == GameStatus.LOADED) {
                     withContext(Dispatchers.Main) {
                         navController.navigate(R.id.action_loadingFragment_to_questionFragment)

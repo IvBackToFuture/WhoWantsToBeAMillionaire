@@ -6,6 +6,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import com.example.whowantstobeamillionaire.MainViewModel
+import com.example.whowantstobeamillionaire.R
 
 
 class GeniusFragmentDialog : DialogFragment() {
@@ -16,16 +17,16 @@ class GeniusFragmentDialog : DialogFragment() {
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val mNum = viewModel.questionFlow.value?.second?.answers?.indexOfFirst { it.isRight }
         val message = mNum?.let {
-            "Не простой вопрос... Думаю правильный ответ: ${list[mNum]}"
-        } ?: "Прошу прощения, но я не знаю ответа"
+            "${getString(R.string.i_think_right_ans_str)}: ${list[mNum]}"
+        } ?: getString(R.string.i_dont_know_answer)
         return activity?.let {
             val builder = AlertDialog.Builder(it)
-            builder.setTitle("Гений:")
+            builder.setTitle("${getString(R.string.Genius)}:")
                 .setMessage(message)
-                .setPositiveButton("Okay, thank you") { dialog, _ ->
+                .setPositiveButton(getString(R.string.okay_for_genius)) { dialog, _ ->
                     dialog.cancel()
                 }
             builder.create()
-        } ?: throw IllegalStateException("Activity cannot be null")
+        } ?: throw IllegalStateException(getString(R.string.activity_cannot_be_null))
     }
 }

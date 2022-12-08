@@ -145,14 +145,14 @@ class QuestionFragment : Fragment() {
             viewModel.allowedSpecButtonsList[GENIUS_BUTTON] = false
             setVisibility(it, GENIUS_BUTTON)
             activity?.supportFragmentManager?.let { manager ->
-                GeniusFragmentDialog().show(manager, "GENIUS")
+                GeniusFragmentDialog().show(manager, GENIUS)
             }
         }
         peopleButton.setOnClickListener {
             viewModel.allowedSpecButtonsList[PEOPLE_BUTTON] = false
             setVisibility(it, PEOPLE_BUTTON)
             activity?.supportFragmentManager?.let { manager ->
-                PeoplesFragmentDialog().show(manager, "PEOPLE")
+                PeoplesFragmentDialog().show(manager, PEOPLE)
             }
         }
 
@@ -201,5 +201,10 @@ class QuestionFragment : Fragment() {
     override fun onDestroyView() {
         job.cancel()
         super.onDestroyView()
+    }
+
+    companion object {
+        const val GENIUS = "GENIUS"
+        const val PEOPLE = "PEOPLE"
     }
 }

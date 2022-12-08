@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="35dp"
-            android:text="Your winnings"/>
+            android:text="@string/your_winnings"/>
 
         <TextView
             android:id="@+id/moneyResultView"
@@ -37,7 +37,8 @@
             android:id="@+id/homeButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="home"
+            android:text="@string/home"
+            android:background="@drawable/button_style"
             android:textSize="25dp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

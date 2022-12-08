@@ -6,6 +6,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.activityViewModels
 import com.example.whowantstobeamillionaire.MainViewModel
+import com.example.whowantstobeamillionaire.R
 import kotlin.random.Random
 
 class PeoplesFragmentDialog : DialogFragment() {
@@ -25,12 +26,12 @@ class PeoplesFragmentDialog : DialogFragment() {
         }.joinToString()
         return activity?.let {
             val builder = AlertDialog.Builder(it)
-            builder.setTitle("Зрители:")
+            builder.setTitle("${getString(R.string.watchers)}:")
                 .setMessage(message)
-                .setPositiveButton("Okay") { dialog, _ ->
+                .setPositiveButton(getString(R.string.okay)) { dialog, _ ->
                     dialog.cancel()
                 }
             builder.create()
-        } ?: throw IllegalStateException("Activity cannot be null")
+        } ?: throw IllegalStateException(getString(R.string.activity_cannot_be_null))
     }
 }

@@ -17,13 +17,13 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="35dp"
-            android:text="Error. Please check your Internet."/>
+            android:text="@string/internet_error_message"/>
 
         <Button
             android:id="@+id/homeButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="home"
+            android:text="@string/home"
             android:textSize="25dp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>

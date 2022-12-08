@@ -2,7 +2,6 @@ package com.example.whowantstobeamillionaire.fragments
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -55,7 +54,6 @@ class GameResultFragment : Fragment() {
                     resultTextView.text = resultText
                     moneyResultView.text =
                         "${viewModel.getMoneyByEnd(question?.first ?: 0, !isLose, isWin)}$"
-                    Log.d("some", "some")
                 }
             }
         }

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Кто хочет стать миллионером</string>
+    <string name="hello_blank_fragment">Привет бланковый фрагмент</string>
+    <string name="all_string">все</string>
+    <string name="questions">вопросы</string>
+    <string name="i_think_right_ans_str">Не простой вопрос... Думаю правильный ответ</string>
+    <string name="i_dont_know_answer">Прошу прощения, но я не знаю ответа</string>
+    <string name="Genius">Гений</string>
+    <string name="okay_for_genius">Хорошо спасибо</string>
+    <string name="activity_cannot_be_null">Активити  не может несуществовать</string>
+    <string name="watchers">Зрители</string>
+    <string name="okay">Окей</string>
+    <string name="easy">Легкий</string>
+    <string name="middle">Средний</string>
+    <string name="hard">Сложный</string>
+    <string name="child">Детский</string>
+    <string name="classic">Классический</string>
+    <string name="home">Домой</string>
+    <string name="your_winnings">Вы выиграли</string>
+    <string name="internet_error_message">Ошибка. Проверьте интернет подключение</string>
+    <string name="wait_game_str">ожидайте... игра загружается</string>
+    <string name="back">Назад</string>
+    <string name="split">50/50</string>
+    <string name="people">зал</string>
+    <string name="genius">гений</string>
+    <string name="start">старт</string>
+    <string name="you_answer_string">Вы ответили на</string>
+</resources>

@@ -1,5 +1,6 @@
 package com.example.whowantstobeamillionaire.fragments
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,13 +14,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.whowantstobeamillionaire.MainViewModel
 import com.example.whowantstobeamillionaire.R
 
-class DifficultAdapter(private val viewModel: MainViewModel) :
+class DifficultAdapter(private val viewModel: MainViewModel, private val context: Context?) :
     RecyclerView.Adapter<DifficultAdapter.ViewHolder>() {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val button: Button = itemView.findViewById(R.id.difficultButton)
     }
 
-    private val list = viewModel.getListDifficultiesName()
+    private val list = viewModel.getListDifficultiesName().map { context?.getString(it) }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
@@ -34,7 +35,6 @@ class DifficultAdapter(private val viewModel: MainViewModel) :
             viewModel.setCurrentDifficultiesById(position)
             viewModel.getNextQuestion()
             it.findNavController().navigate(R.id.action_selectDifficultFragment_to_loadingFragment)
-//            TODO("navigation to loading fragment")//            navController.navigate(R.id.action_selectDifficultFragment_to_loadingFragment)
         }
     }
     override fun getItemCount(): Int = list.size
@@ -53,7 +53,7 @@ class SelectDifficultFragment : Fragment() {
     override fun onStart() {
         super.onStart()
         val recycler = view?.findViewById<RecyclerView>(R.id.difficultRecyclerView)
-        recycler?.layoutManager = LinearLayoutManager(this.context)
-        recycler?.adapter = DifficultAdapter(viewModel)
+        recycler?.layoutManager = LinearLayoutManager(context)
+        recycler?.adapter = DifficultAdapter(viewModel, context)
     }
 }
