@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.QuestionFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Button
+            android:id="@+id/homeButton"
+            android:layout_width="75dp"
+            android:layout_height="76dp"
+            android:background="@drawable/ic_home_foreground"
+            app:layout_constraintBaseline_toBaselineOf="@+id/linearLayoutCompat"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/moneyButton"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:background="@drawable/ic_money_foreground"
+            app:layout_constraintBaseline_toBaselineOf="@+id/homeButton"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearLayoutCompat"
+            android:layout_width="221dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/moneyButton"
+            app:layout_constraintStart_toEndOf="@+id/homeButton"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/currentBidView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="1 000 $"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/currentQuestionNumberView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2/15"
+                android:textSize="18sp" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <TextView
+            android:id="@+id/questionView"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:background="@drawable/text_view_style"
+            android:gravity="center"
+            android:text="question text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutCompat" />
+
+        <Button
+            android:id="@+id/geniusButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Geniius"
+            app:layout_constraintEnd_toStartOf="@+id/peopleButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/halfButton"
+            app:layout_constraintTop_toBottomOf="@+id/questionView" />
+
+        <Button
+            android:id="@+id/halfButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Slit"
+            app:layout_constraintBaseline_toBaselineOf="@+id/geniusButton"
+            app:layout_constraintEnd_toStartOf="@+id/geniusButton"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/peopleButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="people"
+            app:layout_constraintBaseline_toBaselineOf="@+id/geniusButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/geniusButton" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/buttonsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginTop="30dp"
+            android:gravity="fill"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/geniusButton"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

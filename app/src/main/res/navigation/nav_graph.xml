@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startMenuFragment">
+
+    <fragment
+        android:id="@+id/gameResultFragment"
+        android:name="com.example.whowantstobeamillionaire.fragments.GameResultFragment"
+        android:label="fragment_game_result"
+        tools:layout="@layout/fragment_game_result" />
+    <fragment
+        android:id="@+id/loadingFragment"
+        android:name="com.example.whowantstobeamillionaire.fragments.LoadingFragment"
+        android:label="fragment_loading"
+        tools:layout="@layout/fragment_loading" >
+        <action
+            android:id="@+id/action_loadingFragment_to_questionFragment"
+            app:destination="@id/questionFragment"
+            app:popUpTo="@id/startMenuFragment"/>
+        <action
+            android:id="@+id/action_loadingFragment_to_loadErrorFragment"
+            app:destination="@id/loadErrorFragment"
+            app:popUpTo="@id/startMenuFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/moneyFragment"
+        android:name="com.example.whowantstobeamillionaire.fragments.MoneyFragment"
+        android:label="fragment_money"
+        tools:layout="@layout/fragment_money" />
+    <fragment
+        android:id="@+id/questionFragment"
+        android:name="com.example.whowantstobeamillionaire.fragments.QuestionFragment"
+        android:label="fragment_question"
+        tools:layout="@layout/fragment_question" >
+        <action
+            android:id="@+id/action_questionFragment_to_moneyFragment"
+            app:destination="@id/moneyFragment"/>
+        <action
+            android:id="@+id/action_questionFragment_to_gameResultFragment"
+            app:destination="@id/gameResultFragment"
+            app:popUpTo="@id/startMenuFragment"/>
+
+    </fragment>
+    <fragment
+        android:id="@+id/selectDifficultFragment"
+        android:name="com.example.whowantstobeamillionaire.fragments.SelectDifficultFragment"
+        android:label="fragment_select_difficult"
+        tools:layout="@layout/fragment_select_difficult" >
+        <action
+            android:id="@+id/action_selectDifficultFragment_to_loadingFragment"
+            app:destination="@id/loadingFragment"
+            app:popUpTo="@id/startMenuFragment"/>
+    </fragment>
+    <fragment
+        android:id="@+id/startMenuFragment"
+        android:name="com.example.whowantstobeamillionaire.fragments.StartMenuFragment"
+        android:label="fragment_start_menu"
+        tools:layout="@layout/fragment_start_menu" >
+        <action
+            android:id="@+id/action_startMenuFragment_to_selectDifficultFragment"
+            app:destination="@id/selectDifficultFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loadErrorFragment"
+        android:name="com.example.whowantstobeamillionaire.fragments.LoadErrorFragment"
+        android:label="fragment_load_error"
+        tools:layout="@layout/fragment_load_error" />
+</navigation>

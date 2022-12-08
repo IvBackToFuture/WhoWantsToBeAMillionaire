@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Who wants to be a millionaire</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="you_answer_string">You answer on</string>
+    <string name="all_string">all</string>
+    <string name="questions">questions</string>
+</resources>
